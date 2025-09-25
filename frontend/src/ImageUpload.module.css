@@ -1,0 +1,93 @@
+.dropzone {
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--bg-secondary);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropzone:hover {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.dragging {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-accent);
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.dragAccept {
+  border-color: var(--success);
+  background-color: rgba(56, 142, 60, 0.1);
+}
+
+.dragReject {
+  border-color: var(--error);
+  background-color: rgba(211, 47, 47, 0.1);
+}
+
+.icon {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+
+.mainText {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.supportText {
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.fileInput {
+  display: none;
+}
+
+/* Add a subtle animation for the dragging state */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.dragging {
+  animation: pulse 1.5s infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .dropzone {
+    border-radius: 8px;
+    min-height: 100px;
+    padding: 1rem 0.75rem;
+  }
+  
+  .mainText {
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropzone {
+    min-height: 80px;
+    padding: 0.75rem 0.5rem;
+  }
+}
