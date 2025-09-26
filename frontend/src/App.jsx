@@ -32,7 +32,7 @@ function App() {
       const formData = new FormData()
       formData.append('file', selectedImage)
 
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://plant-disease-api-vk3v.onrender.com'
+      const apiUrl = 'https://plant-disease-api-vk3v.onrender.com'
       const response = await fetch(`${apiUrl}/predict`, {
         method: 'POST',
         body: formData,
