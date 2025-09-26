@@ -31,6 +31,7 @@ origins = [
     "https://sparton-sih-2025-9jpr.vercel.app",
     "https://sparton-sih-2025.vercel.app",
     "https://sparton-sih-2025.onrender.com",
+    "https://sparton-sih-2025-3.onrender.com",
 ]
 
 app.add_middleware(
