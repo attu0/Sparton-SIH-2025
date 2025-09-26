@@ -28,6 +28,8 @@ MODEL2.compile(
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
+    "https://your-frontend-domain.vercel.app",  # Replace with your actual Vercel frontend URL
+    "https://*.vercel.app",  # Allow all Vercel subdomains
 ]
 
 app.add_middleware(
