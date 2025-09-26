@@ -30,7 +30,8 @@ origins = [
     "http://localhost:5173",
     "https://sparton-sih-2025-9jpr.vercel.app",  # Your Vercel frontend URL
     "https://*.vercel.app",  # Allow all Vercel subdomains
-    "https://*.railway.app",  # Allow all Railway subdomains
+    "https://plant-disease-api-vk3v.onrender.com",  # Render backend URL
+    "https://*.onrender.com",  # Allow all Render subdomains
 ]
 
 app.add_middleware(
@@ -106,8 +107,7 @@ async def predict(file: UploadFile = File(...)):
     }
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(app, host='0.0.0.0', port=port)
+    uvicorn.run(app, host='0.0.0.0', port=8000)
 
 
 
