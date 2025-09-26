@@ -28,8 +28,7 @@ MODEL2.compile(
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://your-frontend-domain.vercel.app",  # Replace with your actual Vercel frontend URL
-    "https://*.vercel.app",  # Allow all Vercel subdomains
+    "https://sparton-sih-2025-9jpr.vercel.app",  # Your actual Vercel frontend URL
 ]
 
 app.add_middleware(
