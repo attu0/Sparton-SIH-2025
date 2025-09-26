@@ -32,11 +32,11 @@ function App() {
       const formData = new FormData()
       formData.append('file', selectedImage)
 
-      const apiUrl = 'https://plant-disease-api-vk3v.onrender.com'
+      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
       const response = await fetch(`${apiUrl}/predict`, {
         method: 'POST',
         body: formData,
-      })
+      });
 
       if (!response.ok) {
         throw new Error('Failed to get prediction')
@@ -62,14 +62,14 @@ function App() {
             <ImagePreview image={selectedImage} isEnglish={isEnglish} />
           </div>
           <div className="right-panel">
-            <PredictionResult 
+            <PredictionResult
               prediction={prediction}
               isLoading={isLoading}
               error={error}
               isEnglish={isEnglish}
             />
             {selectedImage && (
-              <button 
+              <button
                 onClick={handleSubmit}
                 disabled={isLoading}
               >

@@ -28,14 +28,15 @@ MODEL2.compile(
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://sparton-sih-2025-9jpr.vercel.app",  # Your Vercel frontend URL
-    "https://plant-disease-api-vk3v.onrender.com",  # Render backend URL
+    "https://sparton-sih-2025-9jpr.vercel.app",
+    "https://sparton-sih-2025.vercel.app",
+    "https://sparton-sih-2025.onrender.com",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins temporarily
-    allow_credentials=False,  # Must be False when allow_origins is ["*"]
+    allow_origins=origins,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
