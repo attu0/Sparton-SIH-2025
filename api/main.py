@@ -29,15 +29,13 @@ origins = [
     "http://localhost:3000",
     "http://localhost:5173",
     "https://sparton-sih-2025-9jpr.vercel.app",  # Your Vercel frontend URL
-    "https://*.vercel.app",  # Allow all Vercel subdomains
     "https://plant-disease-api-vk3v.onrender.com",  # Render backend URL
-    "https://*.onrender.com",  # Allow all Render subdomains
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],  # Allow all origins temporarily
+    allow_credentials=False,  # Must be False when allow_origins is ["*"]
     allow_methods=["*"],
     allow_headers=["*"],
 )
