@@ -103,6 +103,14 @@ body {
   border-radius: 8px;
 }
 
+/* Drive iframe should fill container */
+.intro-video-iframe {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 50vw, 560px);
+  border: 0;
+}
+
 /* Overlay rover image on top video */
 .intro-video-overlay-logo {
   position: absolute;

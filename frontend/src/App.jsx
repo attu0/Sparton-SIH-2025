@@ -57,15 +57,12 @@ function App() {
       {/* Intro video at the top (selective play) */}
       <div className="intro-video-container">
         <div className="video-container">
-          <video
-            className="intro-video"
-            src="/video.mp4"
-            controls
-            playsInline
-            preload="metadata"
-          >
-            Your browser does not support the video tag.
-          </video>
+          <iframe
+            className="intro-video-iframe"
+            src="https://drive.google.com/file/d/1Mi2Kk5P4-D-k1JDC08OQyIx8m3Afa-6F/preview"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
         </div>
       </div>
       <img src="../public/rover-removebg-preview.svg" alt="Logo" className="logo" />
