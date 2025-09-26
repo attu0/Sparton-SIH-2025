@@ -28,10 +28,10 @@ MODEL2.compile(
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://sparton-sih-2025-9jpr.vercel.app",
     "https://sparton-sih-2025.vercel.app",
-    "https://sparton-sih-2025.onrender.com",
-    "https://sparton-sih-2025-3.onrender.com",
+    "https://sparton-sih-2025-9jpr.vercel.app",
+    "https://sparton-sih-2025-9jpr-o14dsyrdk-atharvs-projects-4f7fb7c3.vercel.app", # The new URL
+    "*" # A wildcard to allow all origins (useful for testing)
 ]
 
 app.add_middleware(
