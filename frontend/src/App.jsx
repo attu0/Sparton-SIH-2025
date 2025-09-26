@@ -55,6 +55,7 @@ function App() {
     <>
       <Navbar onLanguageChange={handleLanguageChange} isEnglish={isEnglish} />
       {/* Intro video at the top (selective play) */}
+      <h1>How to use</h1>
       <div className="intro-video-container">
         <div className="video-container">
           <iframe
@@ -65,7 +66,7 @@ function App() {
           />
         </div>
       </div>
-      <img src="../public/rover-removebg-preview.svg" alt="Logo" className="logo" />
+      <img src="/rover.jpg" alt="Logo" className="logo" />
       <div className="logo-text">
         <p>An unmanned guided vehicle designed to carry around 20kg of weight and travel through the terrains of a farm. The weight includes all the components required for communication, sensors,pesticide container, and robotic arm for pesticide spraying. The main motive of the UGV is to detect if the crop is infected and spray the pesticide only on infected plant. This is to be achieved by the ML system, communication protocols, and website based control.</p>
       </div>
