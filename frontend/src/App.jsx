@@ -32,11 +32,10 @@ function App() {
       const formData = new FormData()
       formData.append('file', selectedImage)
 
-      const apiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
-      const response = await fetch(`${apiUrl}/predict`, {
+      const response = await fetch('http://localhost:8000/predict', {
         method: 'POST',
         body: formData,
-      });
+      })
 
       if (!response.ok) {
         throw new Error('Failed to get prediction')
@@ -68,7 +67,7 @@ function App() {
       </div>
       <img src="/rover.png" alt="Logo" className="logo" />
       <div className="logo-text">
-        <p>An unmanned guided vehicle designed to carry around 20kg of weight and travel through the terrains of a farm. The weight includes all the components required for communication, sensors,pesticide container, and robotic arm for pesticide spraying. The main motive of the UGV is to detect if the crop is infected and spray the pesticide only on infected plant. This is to be achieved by the ML system, communication protocols, and website based control.</p>
+        <p>An unmanned guided vehicle designed to carry around 25kg of weight and travel through the terrains of a farm. The weight includes all the components required for communication, sensors,pesticide container, and robotic arm for pesticide spraying. The main motive of the UGV is to detect if the crop is infected and spray the pesticide only on infected plant. This is to be achieved by the ML system, communication protocols, and website based control.</p>
       </div>
       <h1>Try Yourself</h1>
       <div className="app-container">

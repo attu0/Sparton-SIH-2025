@@ -28,16 +28,12 @@ MODEL2.compile(
 origins = [
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://sparton-sih-2025.vercel.app",
-    "https://sparton-sih-2025-9jpr.vercel.app",
-    "https://sparton-sih-2025-9jpr-o14dsyrdk-atharvs-projects-4f7fb7c3.vercel.app", # The new URL
-    "*" # A wildcard to allow all origins (useful for testing)
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -107,7 +103,5 @@ async def predict(file: UploadFile = File(...)):
     }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='0.0.0.0', port=8000)
-
-
-
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host='0.0.0.0', port=port)
